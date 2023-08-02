@@ -1,0 +1,731 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap");
+html{
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk";
+}
+a{
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent !important;
+}
+a:link, a:visited, a:hover, a:active, a:focus{
+  color: inherit;
+}
+
+button{
+  transition: all 300ms ease-in-out;
+  -webkit-tap-highlight-color: transparent !important;
+
+}
+header {
+  width: 95vw;
+  display: none;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding-inline: 1em; */
+  /* border: 2px solid red; */
+  /* display: none; */
+}
+.brandInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.navLinks {
+  display: flex;
+
+  gap: 2em;
+}
+.navLinks li {
+  list-style-type: none;
+  padding: 0.8em;
+}
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.navLinks a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.navLinks a::before,
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.navLinks a::before {
+  background-color: #54b3d6;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.navLinks a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: #54b3d6;
+}
+
+.navLinks a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.navLinks a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.navLinks a span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.navLinks :hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+.priceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7em;
+  color: #30baeb;
+  padding: 0.9em;
+  border-radius: 1.3em;
+  border: 2px solid #30baeb;
+  background: transparent;
+}
+.firstPage {
+  color: white;
+  flex-shrink: 0;
+  background-size: auto;
+  background-position: center;
+  background: url(./Images/Hero\ background.png);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.firstPage section {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #30baeb;
+}
+.logoImg {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  opacity: 100;
+}
+.contentOne {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em;
+  margin-top: 0em;
+  height: 100%;
+}
+.customerGoals {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+.learnMoreFirst {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 9rem;
+  margin-top: 3em;
+  font-weight: 00;
+  font-size: 1.1em;
+  color: #ffffff;
+  border-radius: 2rem;
+  background: #30baeb;
+  border: none;
+  padding: 0.5em;
+  outline: none;
+}
+.learnMoreFirst:hover {
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+  transform: scale(0.97);
+  background-color: #1088b3;
+}
+.fourPeople {
+  margin-top: 5em;
+  width: 160px;
+}
+.contentOne p {
+  margin: 0.6em;
+  font-size: 1em;
+}
+.blueLine {
+  content: "";
+  height: 3em;
+  background: #30baeb;
+}
+.aboutUsDiv {
+    max-width: 100%;
+   margin: 1em;
+   padding: 0.5em;
+   display: grid;
+   gap: 1em;
+   grid-template-columns: repeat(1, 1fr);
+   
+}
+.aboutUs{
+    color: #0f2b4a;
+    text-align: center;
+    font-family: Hanken Grotesk;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  
+}
+.aboutUsTypo h2 {
+    color: #0f2b4a;
+  font-family: Hanken Grotesk;
+  font-size: 1.6em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 0.4em;
+}
+.aboutUsDiv .aboutUsTypo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  background: #f3f0f0;
+  margin-top: 2em;
+  color: #4f4f4f;
+  font-family: Hanken Grotesk;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.secondBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 9rem;
+  margin-top: 1.6em;
+  font-size: 1.2em;
+  color: #ffffff;
+  border-radius: 2rem;
+  background: #30baeb;
+  border: none;
+  padding: 0.5em;
+  outline: none;
+}
+.typo2 {
+  position: relative;
+    background-color: #f3f0f0;
+    margin-top: 3em;
+    padding: 1em;
+    padding-inline: 1.5em;
+  
+}
+.shakeHands {
+    width: 100%;
+    border-radius: 0.6em;
+    margin-block: 0.4em;
+}
+.numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8em;
+    margin-top: 1.3em;
+}
+.numbers h2 {
+    color: #30baeb;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 24px;
+}
+.numbers p {
+    color: #4f4f4f;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 24px;
+}
+.lastNumber {
+    margin-bottom: 0.8em;
+}
+.brandLogo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    margin: 1em auto;
+}
+.typo3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+    padding-block: 1.2em;
+    background-color: #f3f0f0;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.9em;
+  width: 100%;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  margin: 1.5em;
+  gap: 4em;
+}
+.productsHeading {
+    padding: 0.6em;
+  text-align: center;
+  color: #0f2b4a;
+  font-size: 1.6em;
+  text-transform: uppercase;
+}
+
+.productImages {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  gap: 0.7em;
+}
+.productImg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  z-index: -1;
+  height: 180px;
+  border-radius: 1em;
+}
+
+.productLogo {
+  position: absolute;
+}
+
+.seeAll {
+    justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 9.5rem;
+  margin-top: 1.6em;
+  font-size: 1.5em;
+  color: #ffffff;
+  border-radius: 1.8rem;
+  background: #30baeb;
+  border: none;
+  padding: 0.5em;
+  outline: none;
+}
+.discover {
+    margin-top: em;
+    border-radius: 1em 1em 0 0;
+    background-color: #30baeb;
+  padding-top: 1em;
+}
+.secondLearnMore {
+  margin-top: 2.5em;
+  margin-bottom: 1.2em;
+  background-color: #0f2b4a;
+}
+.discoverTexts {
+    font-weight: 700;
+  margin: 0.5em;
+  font-size: 2.2em;
+  text-align: center;
+  color: #f3f3f3;
+}
+.discoverContents {
+    height: 100%;
+  margin-inline: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.houseImg {
+    width: 100%;
+    height: 100%;
+}
+.cars {
+  margin: 1em;
+  border-radius: 1.5em 1.5em 0 0;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cars h2 {
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+.carImg {
+    width: 100%;
+} 
+
+.customersFeedback {
+  margin: 1em;
+  padding: 1em;
+  margin-top: 4em;
+}
+.feedbackTexts {
+    margin: 1em;
+    padding: 0.5em;
+  text-align: center;
+}
+.feedbackTexts h2 {
+  font-size: 1.4em;
+  line-height: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0f2b4a;
+}
+.feedbackTexts p {
+  font-size: 1em;
+}
+.feedbackImages {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+}
+.review1,
+.review2,
+.review3 {
+    margin-block: 0.6em;
+   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.WhatsApp {
+  border: 3px solid #30baeb;
+  border-radius: 50%;
+}
+.review {
+  position: relative;
+  width: 80%;
+  max-width: 450px;
+}
+.reviewer {
+  width: 20%;
+  max-width: 150px;
+}
+.reviewer1 {
+  transform: rotate(15deg);
+}
+.enquiry {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
+  gap: 1em;
+  margin-block: 1em;
+}
+
+.enquiryCard1 img {
+  width: 100%;
+   max-height: 350px;
+}
+
+.socialEnquiry {
+    background-color: #14a0d1 ;
+    padding: 1em;
+    padding-top: 1.5em; 
+    border-radius: 1.5em;
+
+}
+.socialEnquiry h3 {
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+.buttonPack {
+padding-top: 1em;
+}
+.logoName {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+}
+.logoName img {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.socialEnquiry button {
+  border: none;
+  margin-block: 0.6em;
+  color: white;
+  background-color: #30baeb;
+  padding: 0.6em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  font-size: 0.9em;
+  border-radius: 1.5em;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: #30baeb;
+  padding: 2em 1em;
+}
+.tinyBlueLine {
+  width: 100%;
+  background-color: #0f2b4a;
+  height: 2px;
+  margin-top: 0.5em;
+}
+.address {
+  display: flex;
+}
+.address img,
+.footerSvg {
+  width: 35px;
+  height: 35px;
+}
+address {
+  display: flex;
+  flex-direction: column;
+}
+.email {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 0.6em;
+}
+.emailNumber img {
+  width: 25px;
+  height: 25px;
+}
+.contactNumber {
+  display: flex;
+  margin-top: 0.5em;
+  gap: 0.5em;
+}
+.footer-basic .copyright {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin-bottom: 0;
+}
+
+@media (max-width: 355px) {
+  .customerGoals {
+    margin-top: 1.6em;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.8rem;
+  }
+  .firstPage button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 7rem;
+    margin-top: 2.1em;
+    font-weight: 00;
+    font-size: 0.8em;
+    color: #ffffff;
+    border-radius: 1.7rem;
+    background: #30baeb;
+    border: none;
+    padding: 0.6em;
+    outline: none;
+  }
+  .fourPeople {
+    margin-top: 2.5em;
+    max-width: 130px;
+  }
+  .contentOne p {
+    margin: 1.2em;
+    font-size: 1em;
+  }
+}
+@media (min-width: 945px) {
+  header {
+    display: block;
+  }
+  .mobileLogo {
+    display: none;
+  }
+  .contentOne {
+    padding-inline: 15em;
+    padding-block: 1em;
+  }
+  .customerGoals {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+  .learnMoreFirst {
+    margin-top: 2em;
+    border-radius: 2rem;
+  }
+  .fourPeople {
+    margin-top: 2.5em;
+    width: 120px;
+  }
+  .contentOne p {
+    margin: 1em;
+    font-size: 1em;
+  }
+  .blueLine {
+    height: 2em;
+  }
+  .aboutUsDiv {
+    max-width: 1440px;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-end;
+      gap: 2em;
+    }
+    .aboutUs {
+    margin-top: 2em;
+    }
+
+.typo2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.products {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  gap: 2em;
+}
+.productImages {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 1em;
+  }
+  .productImg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  z-index: -1;
+  height: 180px;
+  width: 180px;
+  border-radius: 1em;
+}
+.productLogo {
+    max-width: 130px;
+  }
+  .discover {
+  grid-column-start:2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+}
+.cars {
+    margin-top: 3em;
+    background: #f3f0f0;
+    height: 100%;
+  }
+  .feedbackImages {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .review1,
+  .review2,
+  .review3 {
+     width: 50%;
+  
+  }
+  .review2{
+    justify-self: end;
+  }
+  .review {
+    width: 700px;
+   max-width: 70%;
+  }
+  .reviewer {
+    width: 250px;
+    max-width: 30%;
+  }
+.enquiry {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+.enquiryCard1 {
+grid-column-start: 1;
+grid-column-end: 3;
+}
+.enquiryCard1 img {
+    max-width: 100%;
+}
+.footer-basic{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.tinyBlueLine {
+  display: none;
+}
+.address{
+  display: inline;
+}
+.email {
+  display: inline;
+}
+.contactNumber {
+  display: block;
+}
+}
